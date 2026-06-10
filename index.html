@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardiões do Agro Verde - Conservação do Solo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botão de acessibilidade fixo -->
+    <div class="acessibilidade" id="acessibilidade">
+        <button id="aumentarFonte" aria-label="Aumentar fonte">A+</button>
+        <button id="diminuirFonte" aria-label="Diminuir fonte">A-</button>
+        <button id="altoContraste" aria-label="Ativar alto contraste">🎨 Contraste</button>
+    </div>
 
+    <!-- Cabeçalho do site -->
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/60x60?text=Logo" alt="Logotipo Guardiões do Agro Verde" id="logo-img">
+            <h1>Guardiões do Agro Verde</h1>
+        </div>
+        <!-- Menu de navegação -->
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre o tema</a></li>
+                <li><a href="#problema">Problema ambiental</a></li>
+                <li><a href="#solucoes">Soluções sustentáveis</a></li>
+                <li><a href="#jogo">Jogo educativo</a></li>
+                <li><a href="#dicas">Gerador de dicas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Seção Início -->
+        <section id="inicio">
+            <h2>Bem-vindo, guardião da terra!</h2>
+            <p>Você está no lugar certo para aprender como conservar o solo e garantir um futuro sustentável para todos.</p>
+            <img src="https://via.placeholder.com/800x300?text=Solo+saudável" alt="Imagem de solo fértil e plantação" class="imagem-destaque">
+        </section>
+
+        <!-- Seção Sobre o tema -->
+        <section id="sobre">
+            <h2>Sobre o tema: Conservação do Solo</h2>
+            <article>
+                <p>A conservação do solo é essencial para a produção de alimentos e para o equilíbrio do meio ambiente. Quando o solo é contaminado ou perde seus nutrientes, as plantações não se desenvolvem, prejudicando a sociedade como um todo.</p>
+                <p>O solo saudável garante água limpa, ar puro e alimentos nutritivos. Somos todos guardiões dessa riqueza natural!</p>
+            </article>
+        </section>
+
+        <!-- Seção Problema ambiental -->
+        <section id="problema">
+            <h2>Problema ambiental: Contaminação e perda de fertilidade do solo</h2>
+            <article>
+                <p>O uso excessivo de agrotóxicos, o desmatamento e o descarte inadequado de lixo contaminam o solo, reduzindo sua fertilidade. Isso afeta diretamente a produção de alimentos e a vida de todos os seres vivos.</p>
+                <p><strong>Consequências:</strong> erosão, desertificação, contaminação da água e perda da biodiversidade.</p>
+            </article>
+        </section>
+
+        <!-- Seção Soluções sustentáveis -->
+        <section id="solucoes">
+            <h2>Soluções sustentáveis para conservar o solo</h2>
+            <article>
+                <ul>
+                    <li>🌱 Rotação de culturas</li>
+                    <li>🌿 Adubação orgânica</li>
+                    <li>💧 Irrigação controlada</li>
+                    <li>♻️ Reciclagem de resíduos orgânicos</li>
+                    <li>🌳 Plantio de árvores em áreas degradadas</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Seção Jogo educativo (Funcionalidade interativa) -->
+        <section id="jogo">
+            <h2>🎮 Jogo educativo: Guardião do Solo</h2>
+            <p>Responda às perguntas e acumule pontos! Cada acerto vale 10 pontos.</p>
+            <div id="pergunta-container">
+                <p id="pergunta-texto"></p>
+                <div id="respostas"></div>
+            </div>
+            <p id="pontuacao">Pontuação: 0</p>
+            <button id="proxima-pergunta">Próxima pergunta</button>
+        </section>
+
+        <!-- Seção Gerador de dicas sustentáveis -->
+        <section id="dicas">
+            <h2>💡 Gerador de dicas sustentáveis</h2>
+            <p>Clique no botão abaixo para receber uma dica sobre conservação do solo.</p>
+            <button id="gerar-dica">Gerar dica</button>
+            <p id="dica-texto" class="dica"></p>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 - Guardiões do Agro Verde | Concurso Agrinho 2026</p>
+        <p>Projeto desenvolvido para conscientização sobre conservação do solo</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
