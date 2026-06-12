@@ -83,12 +83,10 @@ totalPerguntasSpan.textContent = perguntas.length;
 
 // ========== FUNÇÕES DO JOGO ==========
 
-// Função para atualizar a dica do duende
 function atualizarDica(texto) {
     textoDica.textContent = texto;
 }
 
-// Função para carregar uma pergunta
 function carregarPergunta() {
     if (perguntaAtual >= perguntas.length) {
         finalizarJogo();
@@ -99,10 +97,8 @@ function carregarPergunta() {
     perguntaTexto.textContent = pergunta.texto;
     numPerguntaSpan.textContent = perguntaAtual + 1;
     
-    // Atualizar dica
     atualizarDica(pergunta.dica);
     
-    // Criar botões das opções
     respostasDiv.innerHTML = "";
     pergunta.opcoes.forEach((opcao, index) => {
         const btn = document.createElement("button");
@@ -117,25 +113,21 @@ function carregarPergunta() {
     btnProximo.disabled = true;
 }
 
-// Função para verificar a resposta
 function verificarResposta(index, botao) {
     if (opcoesBloqueadas) return;
     
     const pergunta = perguntas[perguntaAtual];
     const isCorreta = (index === pergunta.correta);
     
-    // Bloquear novas respostas
     opcoesBloqueadas = true;
     respostaSelecionada = true;
     
     if (isCorreta) {
-        // Adicionar pontos (10 pontos por pergunta)
         pontuacao += 10;
         pontuacaoSpan.textContent = pontuacao;
         botao.classList.add("correta-click");
         atualizarDica("✅ Muito bem! Você acertou! Continue assim, Guardião!");
         
-        // Subir de nível a cada 20 pontos
         const novoNivel = Math.floor(pontuacao / 20) + 1;
         if (novoNivel > nivel && novoNivel <= 5) {
             nivel = novoNivel;
@@ -146,16 +138,13 @@ function verificarResposta(index, botao) {
         botao.classList.add("errada-click");
         atualizarDica(`❌ Ops! A resposta correta era: ${pergunta.opcoes[pergunta.correta]}. Não desista!`);
         
-        // Destacar resposta correta
         const botoes = document.querySelectorAll(".opcao-btn");
         botoes[pergunta.correta].classList.add("correta-click");
     }
     
-    // Habilitar botão próximo
     btnProximo.disabled = false;
 }
 
-// Função para ir para a próxima pergunta
 function proximaPergunta() {
     if (!respostaSelecionada) return;
     
@@ -168,7 +157,6 @@ function proximaPergunta() {
     }
 }
 
-// Função para finalizar o jogo
 function finalizarJogo() {
     perguntaTexto.textContent = "🎉 Fim do jogo! Você completou todas as perguntas!";
     respostasDiv.innerHTML = "";
@@ -185,12 +173,9 @@ function finalizarJogo() {
     
     mensagemFinalDiv.innerHTML = `<div class="mensagem-sucesso">${mensagem}</div>`;
     atualizarDica("Jogue novamente para aprender ainda mais sobre como proteger o solo!");
-    
-    // Desabilitar iniciar e mostrar botão para reiniciar
     btnIniciar.textContent = "🔄 Jogar Novamente";
 }
 
-// Função para iniciar o jogo
 function iniciarJogo() {
     pontuacao = 0;
     nivel = 1;
@@ -208,13 +193,11 @@ function iniciarJogo() {
     atualizarDica("Vamos começar! Leia cada pergunta com atenção. Eu estou aqui para te ajudar!");
 }
 
-// Eventos dos botões do jogo
 btnIniciar.addEventListener("click", iniciarJogo);
 btnProximo.addEventListener("click", proximaPergunta);
 
 // ========== ACESSIBILIDADE ==========
-// Controle de fonte
-let tamanhoFonteAtual = 2; // 1-pequena, 2-normal, 3-grande, 4-muito-grande
+let tamanhoFonteAtual = 2;
 const tamanhos = ["fonte-pequena", "fonte-normal", "fonte-grande", "fonte-muito-grande"];
 
 function aplicarTamanhoFonte(indice) {
@@ -236,7 +219,6 @@ document.getElementById("diminuirFonte").addEventListener("click", () => {
     }
 });
 
-// Alto contraste
 let contrasteAtivo = false;
 document.getElementById("altoContraste").addEventListener("click", () => {
     contrasteAtivo = !contrasteAtivo;
@@ -249,7 +231,6 @@ document.getElementById("altoContraste").addEventListener("click", () => {
     }
 });
 
-// Painel de acessibilidade toggle
 const btnAcess = document.getElementById("btnAcessibilidade");
 const painel = document.getElementById("painelAcessibilidade");
 
@@ -257,7 +238,6 @@ btnAcess.addEventListener("click", () => {
     painel.classList.toggle("ativo");
 });
 
-// Fechar painel ao clicar fora
 document.addEventListener("click", (e) => {
     if (!btnAcess.contains(e.target) && !painel.contains(e.target)) {
         painel.classList.remove("ativo");
@@ -268,18 +248,16 @@ document.addEventListener("click", (e) => {
 let paisagemAtiva = false;
 const btnPaisagem = document.getElementById("btnPaisagem");
 
-// IMAGEM REAL de paisagem com árvores e natureza
-const urlImagemPaisagem = "https://images.pexels.com/photos/158028/bison-herd-yellowstone-national-park-wyoming-158028.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop";
+// IMAGEM REAL de paisagem com árvores (funciona 100%)
+const urlImagemPaisagem = "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg";
 
 btnPaisagem.addEventListener("click", () => {
     paisagemAtiva = !paisagemAtiva;
     if (paisagemAtiva) {
-        // Aplica a imagem real de fundo
         document.body.style.background = `url('${urlImagemPaisagem}') no-repeat center center fixed`;
         document.body.style.backgroundSize = "cover";
         btnPaisagem.textContent = "🌾 Voltar para fundo original";
     } else {
-        // Volta para o fundo original com gradiente
         document.body.style.background = "";
         document.body.style.backgroundImage = "linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%)";
         btnPaisagem.textContent = "🌄 Mudar para Paisagem";
