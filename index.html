@@ -2,103 +2,169 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Guardiões do Agro Verde - Conservação do Solo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Botão de acessibilidade fixo -->
-    <div class="acessibilidade" id="acessibilidade">
-        <button id="aumentarFonte" aria-label="Aumentar fonte">A+</button>
-        <button id="diminuirFonte" aria-label="Diminuir fonte">A-</button>
-        <button id="altoContraste" aria-label="Ativar alto contraste">🎨 Contraste</button>
+    <div class="acessibilidade" id="acessibilidadeBotao">
+        <button id="btnAcessibilidade" aria-label="Acessibilidade">♿</button>
+        <div class="painelAcessibilidade" id="painelAcessibilidade">
+            <button id="aumentarFonte" aria-label="Aumentar fonte">A+</button>
+            <button id="diminuirFonte" aria-label="Diminuir fonte">A-</button>
+            <button id="altoContraste" aria-label="Alto contraste">🌓 Alto Contraste</button>
+        </div>
     </div>
 
-    <!-- Cabeçalho do site -->
+    <!-- Cabeçalho -->
     <header>
         <div class="logo">
-            <img src="https://via.placeholder.com/60x60?text=Logo" alt="Logotipo Guardiões do Agro Verde" id="logo-img">
-            <h1>Guardiões do Agro Verde</h1>
+            <h1>🌱 Guardiões do Agro Verde</h1>
+            <p>Conservação do solo para um futuro sustentável</p>
         </div>
         <!-- Menu de navegação -->
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre o tema</a></li>
-                <li><a href="#problema">Problema ambiental</a></li>
-                <li><a href="#solucoes">Soluções sustentáveis</a></li>
-                <li><a href="#jogo">Jogo educativo</a></li>
-                <li><a href="#dicas">Gerador de dicas</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#problema">Problema</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#jogo">Jogo Educativo</a></li>
+                <li><a href="#conclusao">Conclusão</a></li>
             </ul>
         </nav>
+        <!-- Botão para mudar plano de fundo -->
+        <button id="btnPaisagem" class="btn-paisagem">🌄 Mudar para Paisagem</button>
     </header>
 
     <!-- Conteúdo principal -->
     <main>
         <!-- Seção Início -->
-        <section id="inicio">
-            <h2>Bem-vindo, guardião da terra!</h2>
-            <p>Você está no lugar certo para aprender como conservar o solo e garantir um futuro sustentável para todos.</p>
-            <img src="https://via.placeholder.com/800x300?text=Solo+saudável" alt="Imagem de solo fértil e plantação" class="imagem-destaque">
+        <section id="inicio" class="secao">
+            <h2>Bem-vindo, Guardião!</h2>
+            <div class="conteudo-inicio">
+                <img src="https://placehold.co/600x400/2d6a4f/white?text=Solo+Saudável" alt="Imagem representando solo saudável e plantação" class="img-ilustrativa">
+                <div class="texto-inicio">
+                    <p>Você está pronto para se tornar um guardião do solo? Aqui você vai aprender como cuidar da terra, evitar contaminações e garantir que as futuras gerações tenham um solo fértil e produtivo.</p>
+                    <p><strong>🌾 Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</strong></p>
+                </div>
+            </div>
         </section>
 
         <!-- Seção Sobre o tema -->
-        <section id="sobre">
-            <h2>Sobre o tema: Conservação do Solo</h2>
+        <section id="sobre" class="secao">
+            <h2>🌿 Sobre o Tema</h2>
             <article>
-                <p>A conservação do solo é essencial para a produção de alimentos e para o equilíbrio do meio ambiente. Quando o solo é contaminado ou perde seus nutrientes, as plantações não se desenvolvem, prejudicando a sociedade como um todo.</p>
-                <p>O solo saudável garante água limpa, ar puro e alimentos nutritivos. Somos todos guardiões dessa riqueza natural!</p>
+                <h3>Agricultura Sustentável</h3>
+                <p>Agricultura sustentável é aquela que respeita o meio ambiente, conserva os recursos naturais e garante produção de alimentos para as atuais e futuras gerações. O solo é a base de tudo! Sem solo saudável, não há plantas, não há alimentos, não há vida.</p>
+                <p>O projeto <strong>Guardiões do Agro Verde</strong> foi criado para conscientizar sobre a importância da conservação do solo e ensinar práticas sustentáveis para agricultores, jovens e toda a comunidade.</p>
             </article>
         </section>
 
         <!-- Seção Problema ambiental -->
-        <section id="problema">
-            <h2>Problema ambiental: Contaminação e perda de fertilidade do solo</h2>
-            <article>
-                <p>O uso excessivo de agrotóxicos, o desmatamento e o descarte inadequado de lixo contaminam o solo, reduzindo sua fertilidade. Isso afeta diretamente a produção de alimentos e a vida de todos os seres vivos.</p>
-                <p><strong>Consequências:</strong> erosão, desertificação, contaminação da água e perda da biodiversidade.</p>
-            </article>
+        <section id="problema" class="secao">
+            <h2>⚠️ Problema: Degradação do Solo</h2>
+            <div class="cards-problema">
+                <div class="card">
+                    <h3>Contaminação por Agrotóxicos</h3>
+                    <p>O uso excessivo de produtos químicos contamina o solo, mata microrganismos importantes e reduz a fertilidade.</p>
+                </div>
+                <div class="card">
+                    <h3>Erosão</h3>
+                    <p>A retirada da vegetação nativa e o plantio inadequado causam erosão, levando embora a camada fértil do solo.</p>
+                </div>
+                <div class="card">
+                    <h3>Desmatamento</h3>
+                    <p>Sem árvores, o solo fica exposto ao sol e à chuva, perdendo nutrientes e capacidade de produção.</p>
+                </div>
+            </div>
+            <p class="destaque">Se o solo for contaminado ou degradado, não tem produção e nem colheita, prejudicando diretamente os seres vivos!</p>
         </section>
 
         <!-- Seção Soluções sustentáveis -->
-        <section id="solucoes">
-            <h2>Soluções sustentáveis para conservar o solo</h2>
-            <article>
-                <ul>
-                    <li>🌱 Rotação de culturas</li>
-                    <li>🌿 Adubação orgânica</li>
-                    <li>💧 Irrigação controlada</li>
-                    <li>♻️ Reciclagem de resíduos orgânicos</li>
-                    <li>🌳 Plantio de árvores em áreas degradadas</li>
-                </ul>
-            </article>
-        </section>
-
-        <!-- Seção Jogo educativo (Funcionalidade interativa) -->
-        <section id="jogo">
-            <h2>🎮 Jogo educativo: Guardião do Solo</h2>
-            <p>Responda às perguntas e acumule pontos! Cada acerto vale 10 pontos.</p>
-            <div id="pergunta-container">
-                <p id="pergunta-texto"></p>
-                <div id="respostas"></div>
+        <section id="solucoes" class="secao">
+            <h2>🌱 Soluções Sustentáveis</h2>
+            <div class="solucoes-grid">
+                <div class="solucao">
+                    <h3>🌾 Rotação de Culturas</h3>
+                    <p>Alternar diferentes plantas no mesmo terreno evita o esgotamento dos nutrientes.</p>
+                </div>
+                <div class="solucao">
+                    <h3>🌿 Adubação Orgânica</h3>
+                    <p>Usar composto orgânico ao invés de fertilizantes químicos mantém o solo vivo e fértil.</p>
+                </div>
+                <div class="solucao">
+                    <h3>💧 Plantio Direto</h3>
+                    <p>Plantar sem revolver a terra protege contra erosão e mantém a umidade.</p>
+                </div>
+                <div class="solucao">
+                    <h3>🌳 Reflorestamento</h3>
+                    <p>Plantar árvores nas margens de rios e encostas protege o solo e a água.</p>
+                </div>
             </div>
-            <p id="pontuacao">Pontuação: 0</p>
-            <button id="proxima-pergunta">Próxima pergunta</button>
         </section>
 
-        <!-- Seção Gerador de dicas sustentáveis -->
-        <section id="dicas">
-            <h2>💡 Gerador de dicas sustentáveis</h2>
-            <p>Clique no botão abaixo para receber uma dica sobre conservação do solo.</p>
-            <button id="gerar-dica">Gerar dica</button>
-            <p id="dica-texto" class="dica"></p>
+        <!-- Seção Jogo Educativo (Funcionalidade principal) -->
+        <section id="jogo" class="secao jogo-section">
+            <h2>🎮 Jogo do Guardião do Solo</h2>
+            <p class="descricao-jogo">Responda as perguntas, acumule pontos e suba de nível! O Duende vai te dar dicas.</p>
+            
+            <!-- Personagem Duende -->
+            <div class="duende-area">
+                <div class="duende">
+                    <span class="duende-imagem">🧙‍♂️</span>
+                    <div class="balao" id="balaoDica">
+                        <p id="textoDica">Clique em "Iniciar Jogo" e vamos aprender!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Área do Jogo -->
+            <div class="jogo-container">
+                <div class="info-jogo">
+                    <p><strong>Pontuação:</strong> <span id="pontuacao">0</span></p>
+                    <p><strong>Nível:</strong> <span id="nivel">1</span></p>
+                    <p><strong>Pergunta:</strong> <span id="numPergunta">0</span>/<span id="totalPerguntas">5</span></p>
+                </div>
+                
+                <div id="perguntaAtual" class="pergunta-box">
+                    <p id="perguntaTexto">Clique em Iniciar Jogo para começar!</p>
+                    <div id="respostasOpcoes" class="opcoes"></div>
+                </div>
+
+                <div class="botoes-jogo">
+                    <button id="btnIniciar" class="btn-jogo">🌱 Iniciar Jogo</button>
+                    <button id="btnProximo" class="btn-jogo" disabled>Próxima Pergunta →</button>
+                </div>
+            </div>
+
+            <div id="mensagemFinal" class="mensagem-final"></div>
+        </section>
+
+        <!-- Seção Conclusão -->
+        <section id="conclusao" class="secao">
+            <h2>🏆 Conclusão</h2>
+            <article>
+                <p>Cada um de nós pode ser um <strong>Guardião do Agro Verde</strong>! Pequenas atitudes fazem a diferença:</p>
+                <ul>
+                    <li>✓ Prefira alimentos orgânicos</li>
+                    <li>✓ Evite o desperdício</li>
+                    <li>✓ Plante árvores</li>
+                    <li>✓ Divulgue práticas sustentáveis</li>
+                </ul>
+                <p>Com equilíbrio entre produção e meio ambiente, teremos um futuro sustentável para todos!</p>
+                <p class="frase-final"><em>"O solo não é uma herança dos nossos avós, é um empréstimo dos nossos netos."</em></p>
+            </article>
         </section>
     </main>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2026 - Guardiões do Agro Verde | Concurso Agrinho 2026</p>
-        <p>Projeto desenvolvido para conscientização sobre conservação do solo</p>
+        <p>© 2026 - Guardiões do Agro Verde | Projeto Agrinho 2026</p>
+        <p>Conservação do solo - Agro forte, futuro sustentável</p>
+        <p>Desenvolvido por Lays Vitória dos Santos</p>
     </footer>
 
     <script src="script.js"></script>
